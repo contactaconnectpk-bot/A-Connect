@@ -1,0 +1,218 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scholarship Details - A-Connect</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f7f9fc;
+            color: #222;
+        }
+
+        .navbar {
+            background: #111827;
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: white;
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        .back-btn {
+            color: white;
+            text-decoration: none;
+            font-size: 15px;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 900px;
+            margin: 50px auto;
+        }
+
+        .details-card {
+            background: white;
+            padding: 35px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .details-card h1 {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .country {
+            color: #2563eb;
+            font-weight: bold;
+            margin-bottom: 25px;
+        }
+
+        .info {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .info-box {
+            background: #f3f6fa;
+            padding: 18px;
+            border-radius: 10px;
+        }
+
+        .info-box strong {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .section {
+            margin-top: 30px;
+        }
+
+        .section h2 {
+            margin-bottom: 12px;
+        }
+
+        .section p,
+        .section li {
+            line-height: 1.7;
+        }
+
+        .section ul {
+            padding-left: 20px;
+        }
+
+        .apply-btn {
+            display: inline-block;
+            margin-top: 30px;
+            background: #2563eb;
+            color: white;
+            text-decoration: none;
+            padding: 14px 25px;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+
+        .apply-btn:hover {
+            background: #1d4ed8;
+        }
+
+        @media (max-width: 600px) {
+            .info {
+                grid-template-columns: 1fr;
+            }
+
+            .details-card {
+                padding: 25px;
+            }
+
+            .details-card h1 {
+                font-size: 25px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="logo">A-Connect</div>
+        <a href="index.html" class="back-btn">← Back to Scholarships</a>
+    </nav>
+
+    <div class="container">
+
+        <div class="details-card">
+
+            <h1>Scholarship Name</h1>
+
+            <p class="country">🌍 Country Name</p>
+
+            <div class="info">
+
+                <div class="info-box">
+                    <strong>💰 Funding</strong>
+                    Fully Funded
+                </div>
+
+                <div class="info-box">
+                    <strong>🎓 Degree Level</strong>
+                    Bachelor's / Master's / PhD
+                </div>
+
+                <div class="info-box">
+                    <strong>📅 Deadline</strong>
+                    Add deadline
+                </div>
+
+                <div class="info-box">
+                    <strong>👥 Eligibility</strong>
+                    International Students
+                </div>
+
+            </div>
+
+            <div class="section">
+                <h2>About the Scholarship</h2>
+                <p>
+                    Add a short description of the scholarship here.
+                    Explain what the scholarship offers and who provides it.
+                </p>
+            </div>
+
+            <div class="section">
+                <h2>What Does It Cover?</h2>
+
+                <ul>
+                    <li>Tuition fees</li>
+                    <li>Monthly stipend</li>
+                    <li>Accommodation</li>
+                    <li>Health insurance</li>
+                    <li>Travel allowance</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>Eligibility Requirements</h2>
+
+                <ul>
+                    <li>Must meet the required academic criteria.</li>
+                    <li>Must be eligible according to the scholarship rules.</li>
+                    <li>Must submit all required documents before the deadline.</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>How to Apply</h2>
+
+                <p>
+                    Visit the official scholarship website and complete
+                    the application form before the deadline.
+                </p>
+            </div>
+
+            <a href="#" class="apply-btn">Apply on Official Website →</a>
+
+        </div>
+
+    </div>
+
+</body>
+</html>
+

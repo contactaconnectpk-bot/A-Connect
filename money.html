@@ -1,0 +1,837 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>A-Connect | Money</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f7f5ff;
+            color: #252336;
+        }
+
+
+        /* NAVIGATION */
+
+        nav {
+            background-color: white;
+            padding: 18px 20px;
+            text-align: center;
+            box-shadow: 0 2px 15px rgba(50, 40, 90, 0.08);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #252336;
+            font-weight: bold;
+            margin: 0 14px;
+            font-size: 16px;
+        }
+
+        nav a:hover {
+            color: #6d5dfc;
+        }
+
+
+        /* HERO */
+
+        .hero {
+            text-align: center;
+            padding: 75px 20px 45px;
+        }
+
+        .hero h1 {
+            font-size: 58px;
+            margin: 0 0 15px;
+        }
+
+        .hero p {
+            max-width: 700px;
+            margin: auto;
+            color: #686477;
+            font-size: 19px;
+            line-height: 1.7;
+        }
+
+
+        /* CONTENT */
+
+        .content {
+            max-width: 1100px;
+            margin: auto;
+            padding: 0 20px 80px;
+        }
+
+
+        /* SECTION TITLE */
+
+        .section-title {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .section-title h2 {
+            font-size: 31px;
+            margin-bottom: 8px;
+        }
+
+        .section-title p {
+            color: #777287;
+            line-height: 1.6;
+        }
+
+
+        /* MONEY GRID */
+
+        .money-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+
+        /* MONEY CARD */
+
+        .money-card {
+            background-color: white;
+            padding: 27px;
+            border-radius: 22px;
+            box-shadow: 0 6px 20px rgba(60, 50, 100, 0.07);
+            transition: 0.25s;
+        }
+
+        .money-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 28px rgba(60, 50, 100, 0.12);
+        }
+
+        .money-card h3 {
+            margin-top: 0;
+            font-size: 21px;
+        }
+
+        .money-card p {
+            color: #625e6c;
+            line-height: 1.65;
+            font-size: 15px;
+        }
+
+
+        /* BUTTON */
+
+        .money-button {
+            display: inline-block;
+            margin-top: 8px;
+            padding: 10px 16px;
+            border-radius: 10px;
+            text-decoration: none;
+            background-color: #29263b;
+            color: white;
+            font-size: 14px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .money-button:hover {
+            background-color: #5144c8;
+        }
+
+
+        /* BUDGET CALCULATOR */
+
+        .calculator {
+            max-width: 800px;
+            margin: 70px auto;
+            padding: 38px;
+            background-color: white;
+            border-radius: 27px;
+            box-shadow: 0 8px 25px rgba(60, 50, 100, 0.08);
+        }
+
+        .calculator h2 {
+            text-align: center;
+            margin-top: 0;
+            font-size: 29px;
+        }
+
+        .calculator-intro {
+            text-align: center;
+            color: #777287;
+            line-height: 1.6;
+        }
+
+        .calculator-inputs {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+            margin-top: 25px;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 7px;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            font-size: 15px;
+            outline: none;
+        }
+
+        .input-group input:focus {
+            border-color: #6d5dfc;
+        }
+
+        .calculate-button {
+            display: block;
+            margin: 25px auto 0;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 11px;
+            background-color: #5144c8;
+            color: white;
+            font-size: 15px;
+            cursor: pointer;
+        }
+
+        .calculate-button:hover {
+            opacity: 0.9;
+        }
+
+        #budgetResult {
+            margin-top: 25px;
+            text-align: center;
+            font-size: 17px;
+            line-height: 1.8;
+        }
+
+
+        /* SAVING BOX */
+
+        .saving-box {
+            max-width: 850px;
+            margin: 70px auto;
+            padding: 40px;
+            text-align: center;
+            background: linear-gradient(
+                135deg,
+                #ffffff,
+                #f0edff
+            );
+            border-radius: 27px;
+            box-shadow: 0 8px 25px rgba(60, 50, 100, 0.08);
+        }
+
+        .saving-box h2 {
+            margin-top: 0;
+            font-size: 29px;
+        }
+
+        .saving-box p {
+            max-width: 650px;
+            margin: 0 auto 20px;
+            color: #625e6c;
+            line-height: 1.7;
+        }
+
+
+        /* MONEY RULES */
+
+        .rules {
+            max-width: 850px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 32px;
+            border-radius: 24px;
+            box-shadow: 0 6px 20px rgba(60, 50, 100, 0.07);
+        }
+
+        .rules h2 {
+            text-align: center;
+            margin-top: 0;
+        }
+
+        .rule {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            padding: 15px 5px;
+            border-bottom: 1px solid #eeeaf5;
+        }
+
+        .rule:last-child {
+            border-bottom: none;
+        }
+
+        .rule-number {
+            min-width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background-color: #eeeaff;
+            color: #5144c8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        .rule h3 {
+            margin: 0 0 5px;
+            font-size: 17px;
+        }
+
+        .rule p {
+            margin: 0;
+            color: #6b6675;
+            line-height: 1.5;
+            font-size: 14px;
+        }
+
+
+        /* FOOTER */
+
+        footer {
+            background-color: white;
+            padding: 25px;
+            text-align: center;
+            color: #777287;
+        }
+
+
+        /* TABLET */
+
+        @media (max-width: 850px) {
+
+            .money-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+        }
+
+
+        /* MOBILE */
+
+        @media (max-width: 600px) {
+
+            nav {
+                padding: 15px 8px;
+            }
+
+            nav a {
+                margin: 0 5px;
+                font-size: 13px;
+            }
+
+            .hero {
+                padding: 55px 20px 40px;
+            }
+
+            .hero h1 {
+                font-size: 42px;
+            }
+
+            .hero p {
+                font-size: 17px;
+            }
+
+            .money-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .calculator {
+                padding: 28px 20px;
+            }
+
+            .calculator-inputs {
+                grid-template-columns: 1fr;
+            }
+
+            .saving-box {
+                padding: 30px 20px;
+            }
+
+            .rules {
+                padding: 25px 20px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- NAVIGATION -->
+
+    <nav>
+
+        <a href="index.html">Home</a>
+
+        <a href="study.html">Study</a>
+
+        <a href="career.html">Career</a>
+
+        <a href="money.html">Money</a>
+
+        <a href="skills.html">Skills & Opportunities</a>
+
+        <a href="index.html">Contact</a>
+
+    </nav>
+
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <h1>💰 Money</h1>
+
+        <p>
+            Money can be confusing when you're just starting out.
+            Learn the basics, build better habits and make smarter
+            decisions about your finances.
+        </p>
+
+    </section>
+
+
+    <main class="content">
+
+
+        <!-- MONEY BASICS -->
+
+        <div class="section-title">
+
+            <h2>💡 Start with the basics</h2>
+
+            <p>
+                You don't need to be a financial expert.
+                Start with a few simple habits.
+            </p>
+
+        </div>
+
+
+        <div class="money-grid">
+
+
+            <!-- BUDGETING -->
+
+            <div class="money-card">
+
+                <h3>📒 Budgeting</h3>
+
+                <p>
+                    A budget simply shows where your money comes
+                    from and where it goes. Tracking your spending
+                    makes it easier to avoid unnecessary expenses.
+                </p>
+
+            </div>
+
+
+            <!-- SAVING -->
+
+            <div class="money-card">
+
+                <h3>🐷 Saving</h3>
+
+                <p>
+                    Even small amounts can add up over time.
+                    Try setting aside part of any money you receive
+                    before spending the rest.
+                </p>
+
+            </div>
+
+
+            <!-- NEEDS VS WANTS -->
+
+            <div class="money-card">
+
+                <h3>🛍️ Needs vs Wants</h3>
+
+                <p>
+                    Before buying something, ask yourself whether
+                    you actually need it or simply want it.
+                    This small habit can prevent impulse spending.
+                </p>
+
+            </div>
+
+
+            <!-- EMERGENCY FUND -->
+
+            <div class="money-card">
+
+                <h3>🛟 Emergency Fund</h3>
+
+                <p>
+                    Unexpected expenses happen. Building a small
+                    emergency fund can give you some breathing room
+                    when something goes wrong.
+                </p>
+
+            </div>
+
+
+            <!-- STUDENT MONEY -->
+
+            <div class="money-card">
+
+                <h3>🎓 Student Finances</h3>
+
+                <p>
+                    Whether you're managing hostel expenses,
+                    transport, food or study costs, keeping track
+                    of regular expenses can make student life easier.
+                </p>
+
+            </div>
+
+
+            <!-- MAKING MONEY -->
+
+            <div class="money-card">
+
+                <h3>💻 Earning Skills</h3>
+
+                <p>
+                    Learning useful skills can open doors to
+                    internships, freelance work, part-time jobs
+                    and other legitimate ways to earn.
+                </p>
+
+                <a
+                    href="skills.html"
+                    class="money-button"
+                >
+                    Explore Skills →
+                </a>
+
+            </div>
+
+
+        </div>
+
+
+        <!-- BUDGET CALCULATOR -->
+
+        <div class="calculator">
+
+            <h2>🧮 Simple Budget Calculator</h2>
+
+            <p class="calculator-intro">
+                Enter your monthly income and expenses to get
+                a quick idea of how much money you have left.
+            </p>
+
+
+            <div class="calculator-inputs">
+
+
+                <div class="input-group">
+
+                    <label for="income">
+                        Monthly Income
+                    </label>
+
+                    <input
+                        type="number"
+                        id="income"
+                        placeholder="e.g. 50000"
+                        min="0"
+                    >
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label for="expenses">
+                        Monthly Expenses
+                    </label>
+
+                    <input
+                        type="number"
+                        id="expenses"
+                        placeholder="e.g. 35000"
+                        min="0"
+                    >
+
+                </div>
+
+
+            </div>
+
+
+            <button
+                class="calculate-button"
+                onclick="calculateBudget()"
+            >
+                Calculate
+            </button>
+
+
+            <div id="budgetResult"></div>
+
+        </div>
+
+
+        <!-- SAVING -->
+
+        <div class="saving-box">
+
+            <h2>🌱 Start small</h2>
+
+            <p>
+                Saving doesn't have to mean putting away a huge
+                amount every month. Even a small percentage of
+                your income can become useful over time.
+            </p>
+
+            <p>
+                Try setting a realistic saving goal and treating
+                it like one of your regular expenses.
+            </p>
+
+        </div>
+
+
+        <!-- MONEY RULES -->
+
+        <div class="section-title">
+
+            <h2>📌 Money habits worth building</h2>
+
+            <p>
+                Simple habits now can make future decisions easier.
+            </p>
+
+        </div>
+
+
+        <div class="rules">
+
+
+            <div class="rule">
+
+                <div class="rule-number">
+                    1
+                </div>
+
+                <div>
+
+                    <h3>Track your spending</h3>
+
+                    <p>
+                        You can't manage your money properly if you
+                        don't know where it's going.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="rule">
+
+                <div class="rule-number">
+                    2
+                </div>
+
+                <div>
+
+                    <h3>Don't spend everything you receive</h3>
+
+                    <p>
+                        Try to keep something aside whenever possible,
+                        even if the amount is small.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="rule">
+
+                <div class="rule-number">
+                    3
+                </div>
+
+                <div>
+
+                    <h3>Think before impulse purchases</h3>
+
+                    <p>
+                        Give yourself some time before making
+                        unnecessary purchases.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="rule">
+
+                <div class="rule-number">
+                    4
+                </div>
+
+                <div>
+
+                    <h3>Learn before investing</h3>
+
+                    <p>
+                        Never put money into something simply because
+                        someone online says you'll make easy money.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="rule">
+
+                <div class="rule-number">
+                    5
+                </div>
+
+                <div>
+
+                    <h3>Be careful with debt</h3>
+
+                    <p>
+                        Understand how much you'll have to repay
+                        before borrowing money or using credit.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+            © 2026 A-Connect | Built for young people.
+        </p>
+
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script>
+
+        function calculateBudget() {
+
+            let income =
+                parseFloat(
+                    document.getElementById("income").value
+                );
+
+            let expenses =
+                parseFloat(
+                    document.getElementById("expenses").value
+                );
+
+
+            let result =
+                document.getElementById("budgetResult");
+
+
+            if (
+                isNaN(income) ||
+                isNaN(expenses)
+            ) {
+
+                result.innerHTML =
+                    "Please enter both your income and expenses.";
+
+                return;
+
+            }
+
+
+            if (
+                income < 0 ||
+                expenses < 0
+            ) {
+
+                result.innerHTML =
+                    "Please enter valid amounts.";
+
+                return;
+
+            }
+
+
+            let remaining =
+                income - expenses;
+
+
+            if (remaining > 0) {
+
+                result.innerHTML =
+                    "You have <strong>" +
+                    remaining.toLocaleString() +
+                    "</strong> left after your listed expenses.";
+
+            }
+
+            else if (remaining === 0) {
+
+                result.innerHTML =
+                    "Your income and expenses are equal.";
+
+            }
+
+            else {
+
+                result.innerHTML =
+                    "Your listed expenses are <strong>" +
+                    Math.abs(remaining).toLocaleString() +
+                    "</strong> more than your income.";
+
+            }
+
+        }
+
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,710 @@
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>A-Connect</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f7f5ff;
+            margin: 0;
+            padding: 0;
+            color: #252336;
+        }
+
+
+        /* NAVIGATION */
+
+        nav {
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 2px 12px rgba(50, 40, 90, 0.08);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav a {
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 17px;
+            color: #252336;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        nav a:hover {
+            color: #6d5dfc;
+        }
+
+
+        /* PAGE */
+
+        .page {
+            padding: 60px 20px;
+            min-height: 70vh;
+        }
+
+
+        /* HERO */
+
+        .hero {
+            padding: 45px 20px 35px;
+        }
+
+        .hero h1 {
+            font-size: 60px;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        .hero .subtitle {
+            font-size: 18px;
+            max-width: 650px;
+            margin: 20px auto;
+            line-height: 1.7;
+            color: #686477;
+        }
+
+
+        /* HEADINGS */
+
+        h2 {
+            font-size: 32px;
+        }
+
+
+        /* CATEGORY CARDS */
+
+        .categories {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .categories button {
+            width: 205px;
+            height: 155px;
+            font-size: 20px;
+            border: none;
+            border-radius: 22px;
+            background-color: white;
+            color: #252336;
+            box-shadow: 0 6px 18px rgba(60, 50, 100, 0.09);
+            cursor: pointer;
+            transition: 0.25s;
+        }
+
+        .categories button:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 12px 25px rgba(60, 50, 100, 0.14);
+        }
+
+
+        /* INFO BOX */
+
+        .info-box {
+            max-width: 750px;
+            margin: 30px auto;
+            background-color: white;
+            padding: 35px;
+            border-radius: 24px;
+            box-shadow: 0 7px 22px rgba(60, 50, 100, 0.08);
+            line-height: 1.7;
+        }
+
+        .info-box p {
+            color: #625e6c;
+        }
+
+
+        /* CONTACT */
+
+        .contact-form {
+            max-width: 550px;
+            margin: 30px auto;
+            background-color: white;
+            padding: 35px;
+            border-radius: 24px;
+            box-shadow: 0 7px 22px rgba(60, 50, 100, 0.08);
+        }
+
+        .contact-form p {
+            color: #625e6c;
+            line-height: 1.6;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 13px;
+            margin: 9px 0;
+            font-size: 15px;
+            border: 1px solid #ddd;
+            border-radius: 11px;
+            font-family: Arial, sans-serif;
+            outline: none;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            border-color: #6d5dfc;
+        }
+
+        .contact-form textarea {
+            height: 130px;
+            resize: vertical;
+        }
+
+        .contact-form button {
+            padding: 12px 25px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 11px;
+            background-color: #29263b;
+            color: white;
+            margin-top: 8px;
+        }
+
+        .contact-form button:hover {
+            background-color: #5144c8;
+        }
+
+
+        /* RESOURCES */
+
+        .resource-list {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            max-width: 1000px;
+            margin: 30px auto;
+        }
+
+        .resource {
+            background-color: white;
+            width: 260px;
+            padding: 25px;
+            border-radius: 20px;
+            box-shadow: 0 6px 18px rgba(60, 50, 100, 0.08);
+        }
+
+        .resource h3 {
+            margin-top: 0;
+        }
+
+        .resource p {
+            color: #625e6c;
+            line-height: 1.6;
+        }
+
+
+        /* BUTTON */
+
+        .resource-button {
+            display: inline-block;
+            padding: 10px 16px;
+            background-color: #29263b;
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            font-size: 14px;
+            margin-top: 8px;
+        }
+
+        .resource-button:hover {
+            background-color: #5144c8;
+        }
+
+
+        /* FOOTER */
+
+        footer {
+            background-color: white;
+            padding: 25px;
+            margin-top: 40px;
+            color: #777287;
+        }
+
+
+        /* MOBILE */
+
+        @media (max-width: 600px) {
+
+            nav {
+                padding: 15px 8px;
+            }
+
+            nav a {
+                margin: 0 5px;
+                font-size: 13px;
+            }
+
+            .hero h1 {
+                font-size: 43px;
+            }
+
+            .hero p {
+                font-size: 20px;
+            }
+
+            .categories {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .categories button {
+                width: 80%;
+                max-width: 310px;
+            }
+
+            .info-box,
+            .contact-form {
+                padding: 25px 20px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- NAVIGATION -->
+
+    <nav>
+
+        <a href="#" onclick="showHome(); return false;">
+            Home
+        </a>
+
+        <a href="#" onclick="showAbout(); return false;">
+            About
+        </a>
+
+        <a href="#" onclick="showResources(); return false;">
+            Resources
+        </a>
+
+        <a href="#" onclick="showContact(); return false;">
+            Contact
+        </a>
+
+    </nav>
+
+
+    <!-- HOME -->
+
+    <section
+        id="home"
+        class="page"
+    >
+
+        <section class="hero">
+
+            <h1>A-Connect</h1>
+
+            <p>
+                Got a problem? Let's figure it out together.
+            </p>
+
+            <p class="subtitle">
+                Find guidance, resources and opportunities
+                designed to help young people study better,
+                plan their careers, manage money and grow.
+            </p>
+
+        </section>
+
+
+        <h2>
+            How can we help?
+        </h2>
+
+
+        <div class="categories">
+
+
+            <button
+                onclick="window.location.href='study.html'"
+            >
+
+                📚
+                <br><br>
+                Study
+
+            </button>
+
+
+            <button
+                onclick="window.location.href='career.html'"
+            >
+
+                💼
+                <br><br>
+                Career
+
+            </button>
+
+
+            <button
+                onclick="window.location.href='money.html'"
+            >
+
+                💰
+                <br><br>
+                Money
+
+            </button>
+
+
+            <button
+                onclick="window.location.href='skills.html'"
+            >
+
+                🚀
+                <br><br>
+                Skills & Opportunities
+
+            </button>
+            
+             <button
+                onclick="window.location.href='scholarships.html'"
+            >
+
+                🎓
+                <br><br>
+                Scholarships
+
+            </button>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+
+    <section
+        id="about"
+        class="page"
+        style="display: none;"
+    >
+
+        <h1>
+            About A-Connect
+        </h1>
+
+
+        <div class="info-box">
+
+            <h2>
+                Why A-Connect?
+            </h2>
+
+            <p>
+                A-Connect is a platform created to help young
+                people find guidance, useful information and
+                opportunities in one place.
+            </p>
+
+            <p>
+                Whether you're struggling with studies,
+                thinking about your career, managing money
+                or looking for new opportunities, A-Connect
+                is here to help you find a direction.
+            </p>
+
+            <p>
+                Our goal is simple:
+                <strong>
+                    connect young people with solutions.
+                </strong>
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- RESOURCES -->
+
+    <section
+        id="resources"
+        class="page"
+        style="display: none;"
+    >
+
+        <h1>
+            Resources
+        </h1>
+
+
+        <div class="resource-list">
+
+
+            <div class="resource">
+
+                <h3>
+                    📚 Study
+                </h3>
+
+                <p>
+                    Find learning platforms, study tools,
+                    scholarships and useful academic resources.
+                </p>
+
+                <a
+                    href="study.html"
+                    class="resource-button"
+                >
+                    Explore
+                </a>
+
+            </div>
+
+
+            <div class="resource">
+
+                <h3>
+                    💼 Career
+                </h3>
+
+                <p>
+                    Explore career guidance, internships,
+                    CV tips and ways to prepare for your future.
+                </p>
+
+                <a
+                    href="career.html"
+                    class="resource-button"
+                >
+                    Explore
+                </a>
+
+            </div>
+
+
+            <div class="resource">
+
+                <h3>
+                    💰 Money
+                </h3>
+
+                <p>
+                    Learn about budgeting, saving and
+                    managing your money.
+                </p>
+
+                <a
+                    href="money.html"
+                    class="resource-button"
+                >
+                    Explore
+                </a>
+
+            </div>
+
+
+            <div class="resource">
+
+                <h3>
+                    🚀 Skills
+                </h3>
+
+                <p>
+                    Discover useful skills, competitions,
+                    volunteering and other opportunities.
+                </p>
+
+                <a
+                    href="skills.html"
+                    class="resource-button"
+                >
+                    Explore
+                </a>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- CONTACT -->
+
+    <section
+        id="contact"
+        class="page"
+        style="display: none;"
+    >
+
+        <h1>
+            Contact Us
+        </h1>
+
+
+        <div class="contact-form">
+
+            <p>
+                Have an idea, suggestion or problem you'd
+                like A-Connect to help with?
+            </p>
+
+            <p>
+                You can also contact us directly at:
+                <br>
+
+                <strong>
+                    contact.a.connect.pk@gmail.com
+                </strong>
+
+            </p>
+
+
+            <!-- FORMSPREE FORM -->
+
+            <form
+                action="https://formspree.io/f/mppzzopb"
+                method="POST"
+            >
+
+
+                <input
+                    type="text"
+                    name="name"
+                    placeholder="Your name"
+                    required
+                >
+
+
+                <input
+                    type="email"
+                    name="email"
+                    placeholder="Your email"
+                    required
+                >
+
+
+                <textarea
+                    name="message"
+                    placeholder="Write your message..."
+                    required
+                ></textarea>
+
+
+                <button type="submit">
+                    Send Message
+                </button>
+
+
+            </form>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+            © 2026 A-Connect | Built for young people.
+        </p>
+
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script>
+
+
+        function hideAllPages() {
+
+            document.getElementById("home").style.display = "none";
+
+            document.getElementById("about").style.display = "none";
+
+            document.getElementById("resources").style.display = "none";
+
+            document.getElementById("contact").style.display = "none";
+
+        }
+
+
+        function showHome() {
+
+            hideAllPages();
+
+            document.getElementById("home").style.display = "block";
+
+            window.scrollTo(0, 0);
+
+        }
+
+
+        function showAbout() {
+
+            hideAllPages();
+
+            document.getElementById("about").style.display = "block";
+
+            window.scrollTo(0, 0);
+
+        }
+
+
+        function showResources() {
+
+            hideAllPages();
+
+            document.getElementById("resources").style.display = "block";
+
+            window.scrollTo(0, 0);
+
+        }
+
+
+        function showContact() {
+
+            hideAllPages();
+
+            document.getElementById("contact").style.display = "block";
+
+            window.scrollTo(0, 0);
+
+        }
+
+
+    </script>
+
+
+</body>
+
+</html>
+

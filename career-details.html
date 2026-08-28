@@ -1,0 +1,725 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>A-Connect | Career Details</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f7ff;
+            margin: 0;
+            color: #222;
+        }
+
+        /* NAVIGATION */
+
+        nav {
+            background-color: white;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav a {
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 17px;
+            color: #222;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        /* HERO */
+
+        .hero {
+            text-align: center;
+            padding: 60px 20px 30px;
+        }
+
+        .hero h1 {
+            font-size: 45px;
+            margin-bottom: 12px;
+        }
+
+        .hero p {
+            font-size: 19px;
+            color: #555;
+            max-width: 700px;
+            margin: auto;
+            line-height: 1.6;
+        }
+
+        /* DETAILS */
+
+        .container {
+            max-width: 950px;
+            margin: 30px auto 80px;
+            padding: 20px;
+        }
+
+        .career-details {
+            background-color: white;
+            padding: 35px;
+            border-radius: 20px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .career-details h2 {
+            font-size: 28px;
+            margin-top: 30px;
+        }
+
+        .career-details p {
+            color: #555;
+            line-height: 1.7;
+            font-size: 16px;
+        }
+
+        /* INFO GRID */
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin: 25px 0;
+        }
+
+        .info-box {
+            background-color: #f5f7ff;
+            padding: 18px;
+            border-radius: 12px;
+        }
+
+        .info-box strong {
+            display: block;
+            margin-bottom: 7px;
+        }
+
+        /* SKILLS */
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 15px;
+        }
+
+        .skill {
+            background-color: #f5f7ff;
+            padding: 9px 13px;
+            border-radius: 8px;
+            font-size: 14px;
+        }
+
+        /* BACK BUTTON */
+
+        .back-button {
+            display: inline-block;
+            margin-top: 30px;
+            text-decoration: none;
+            background-color: #222;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 10px;
+        }
+
+        .back-button:hover {
+            opacity: 0.8;
+        }
+
+        /* FOOTER */
+
+        footer {
+            background-color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 600px) {
+
+            nav {
+                padding: 15px 8px;
+            }
+
+            nav a {
+                margin: 0 5px;
+                font-size: 13px;
+            }
+
+            .hero h1 {
+                font-size: 35px;
+            }
+
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .career-details {
+                padding: 25px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- NAVIGATION -->
+
+    <nav>
+
+        <a href="index.html">Home</a>
+
+        <a href="study.html">Study</a>
+
+        <a href="career.html">Career</a>
+
+        <a href="money.html">Money</a>
+
+        <a href="skills.html">Skills & Opportunities</a>
+
+        <a href="index.html">Contact</a>
+
+    </nav>
+
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <h1 id="careerTitle">
+            💼 Career Details
+        </h1>
+
+        <p id="careerDescription">
+            Explore this career path and discover what you need
+            to get started.
+        </p>
+
+    </section>
+
+
+    <!-- CAREER INFORMATION -->
+
+    <div class="container">
+
+        <div class="career-details">
+
+
+            <div class="info-grid">
+
+                <div class="info-box">
+
+                    <strong>📚 Education</strong>
+
+                    <span id="education">
+                        -
+                    </span>
+
+                </div>
+
+
+                <div class="info-box">
+
+                    <strong>💰 Salary Potential</strong>
+
+                    <span id="salary">
+                        -
+                    </span>
+
+                </div>
+
+
+                <div class="info-box">
+
+                    <strong>🏠 Work Style</strong>
+
+                    <span id="workStyle">
+                        -
+                    </span>
+
+                </div>
+
+
+                <div class="info-box">
+
+                    <strong>📈 Career Growth</strong>
+
+                    <span id="growth">
+                        -
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- ABOUT -->
+
+            <h2>About This Career</h2>
+
+            <p id="about">
+                -
+            </p>
+
+
+            <!-- WHAT YOU DO -->
+
+            <h2>What Do You Do?</h2>
+
+            <p id="responsibilities">
+                -
+            </p>
+
+
+            <!-- SKILLS -->
+
+            <h2>Important Skills</h2>
+
+            <div
+                class="skills"
+                id="skillsList"
+            >
+            </div>
+
+
+            <!-- GETTING STARTED -->
+
+            <h2>How to Get Started</h2>
+
+            <p id="gettingStarted">
+                -
+            </p>
+
+
+            <a
+                href="career.html"
+                class="back-button"
+            >
+                ← Back to Careers
+            </a>
+
+
+        </div>
+
+    </div>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+            © 2026 A-Connect | Built for young people.
+        </p>
+
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script>
+
+        const careers = {
+
+            software: {
+
+                title: "💻 Software Engineer",
+
+                description:
+                    "Build software, applications and digital systems that solve real-world problems.",
+
+                education:
+                    "Computer Science, Software Engineering or related degree",
+
+                salary:
+                    "Varies by country, experience and specialization",
+
+                work:
+                    "Remote, hybrid or office",
+
+                growth:
+                    "High",
+
+                about:
+                    "Software engineers design, develop, test and maintain software used by individuals, businesses and organizations.",
+
+                responsibilities:
+                    "Writing code, designing applications, fixing bugs, testing software, working with teams and improving existing systems.",
+
+                skills: [
+                    "Programming",
+                    "Problem Solving",
+                    "Algorithms",
+                    "Git",
+                    "Communication"
+                ],
+
+                gettingStarted:
+                    "Start with a programming language such as Python, JavaScript or Java. Build small projects, learn Git and gradually create a portfolio of your work."
+
+            },
+
+
+            data: {
+
+                title: "📊 Data Scientist",
+
+                description:
+                    "Use data, statistics and machine learning to solve problems and discover useful insights.",
+
+                education:
+                    "Data Science, Computer Science, Mathematics, Statistics or related degree",
+
+                salary:
+                    "Varies by country, experience and specialization",
+
+                work:
+                    "Remote, hybrid or office",
+
+                growth:
+                    "High",
+
+                about:
+                    "Data scientists analyze large amounts of information to help organizations make better decisions.",
+
+                responsibilities:
+                    "Collecting and cleaning data, analyzing datasets, building models, creating visualizations and communicating findings.",
+
+                skills: [
+                    "Python",
+                    "Statistics",
+                    "Machine Learning",
+                    "SQL",
+                    "Data Visualization"
+                ],
+
+                gettingStarted:
+                    "Learn Python, statistics and SQL. Practice with real datasets and build projects using data analysis and machine learning."
+
+            },
+
+
+            materials: {
+
+                title: "⚙️ Materials Engineer",
+
+                description:
+                    "Develop and improve materials used in products, structures and advanced technologies.",
+
+                education:
+                    "Materials Engineering, Metallurgy, Chemical Engineering or related degree",
+
+                salary:
+                    "Varies by country, industry and experience",
+
+                work:
+                    "Laboratory, field or industrial environment",
+
+                growth:
+                    "Strong",
+
+                about:
+                    "Materials engineers study the properties and performance of materials such as metals, polymers, ceramics and composites.",
+
+                responsibilities:
+                    "Testing materials, analyzing failures, developing new materials, improving manufacturing processes and conducting research.",
+
+                skills: [
+                    "Material Science",
+                    "Laboratory Testing",
+                    "Problem Solving",
+                    "Data Analysis",
+                    "Research"
+                ],
+
+                gettingStarted:
+                    "Build a strong foundation in materials science, laboratory techniques and engineering analysis. Internships and research projects can provide valuable practical experience."
+
+            },
+
+
+            civil: {
+
+                title: "🏗️ Civil Engineer",
+
+                description:
+                    "Design and develop infrastructure such as buildings, roads, bridges and water systems.",
+
+                education:
+                    "Civil Engineering or related engineering degree",
+
+                salary:
+                    "Varies by country, experience and specialization",
+
+                work:
+                    "Office, construction site or field",
+
+                growth:
+                    "Strong",
+
+                about:
+                    "Civil engineers plan, design and supervise infrastructure projects that communities depend on.",
+
+                responsibilities:
+                    "Designing structures, preparing plans, supervising construction, checking safety standards and managing projects.",
+
+                skills: [
+                    "Engineering Design",
+                    "AutoCAD",
+                    "Project Management",
+                    "Mathematics",
+                    "Problem Solving"
+                ],
+
+                gettingStarted:
+                    "Study civil engineering fundamentals and gain practical experience through internships, site visits and engineering projects."
+
+            },
+
+
+            business: {
+
+                title: "📈 Business Analyst",
+
+                description:
+                    "Analyze business problems and use data to help organizations make better decisions.",
+
+                education:
+                    "Business, Economics, Finance, Data Analytics or related degree",
+
+                salary:
+                    "Varies by country, industry and experience",
+
+                work:
+                    "Office, hybrid or remote",
+
+                growth:
+                    "Strong",
+
+                about:
+                    "Business analysts connect business needs with data and practical solutions.",
+
+                responsibilities:
+                    "Analyzing data, identifying problems, preparing reports, communicating with teams and recommending improvements.",
+
+                skills: [
+                    "Excel",
+                    "Data Analysis",
+                    "Communication",
+                    "Problem Solving",
+                    "Business Knowledge"
+                ],
+
+                gettingStarted:
+                    "Learn Excel, data analysis and business fundamentals. Build projects and develop strong communication and presentation skills."
+
+            },
+
+
+            doctor: {
+
+                title: "🩺 Doctor",
+
+                description:
+                    "Diagnose, treat and help prevent illnesses while caring for patients.",
+
+                education:
+                    "Medical degree and required professional training",
+
+                salary:
+                    "Varies significantly by country and specialization",
+
+                work:
+                    "Hospitals, clinics and healthcare facilities",
+
+                growth:
+                    "Strong",
+
+                about:
+                    "Doctors assess patients, diagnose medical conditions and provide treatment and medical guidance.",
+
+                responsibilities:
+                    "Examining patients, diagnosing conditions, prescribing treatments, monitoring recovery and communicating with patients.",
+
+                skills: [
+                    "Medical Knowledge",
+                    "Communication",
+                    "Critical Thinking",
+                    "Empathy",
+                    "Decision Making"
+                ],
+
+                gettingStarted:
+                    "Complete the required medical education and professional training for your country, followed by licensing and any desired specialization."
+
+            },
+
+
+            designer: {
+
+                title: "🎨 Graphic Designer",
+
+                description:
+                    "Create visual content for brands, websites, advertisements, social media and products.",
+
+                education:
+                    "Design, Fine Arts, Visual Communication or related field; portfolio is highly important",
+
+                salary:
+                    "Varies by experience, clients and location",
+
+                work:
+                    "Remote, freelance, hybrid or office",
+
+                growth:
+                    "Strong",
+
+                about:
+                    "Graphic designers communicate ideas visually through typography, layouts, illustrations, branding and digital media.",
+
+                responsibilities:
+                    "Creating designs, developing brand visuals, editing graphics, working with clients and preparing designs for different platforms.",
+
+                skills: [
+                    "Graphic Design",
+                    "Typography",
+                    "Adobe Tools",
+                    "Creativity",
+                    "Communication"
+                ],
+
+                gettingStarted:
+                    "Learn design principles and tools such as Figma or Adobe software. Create a portfolio containing several strong projects."
+
+            },
+
+
+            scientist: {
+
+                title: "🔬 Research Scientist",
+
+                description:
+                    "Conduct experiments and research to develop new knowledge, technologies and solutions.",
+
+                education:
+                    "Relevant bachelor's degree; advanced research roles often require a master's or PhD",
+
+                salary:
+                    "Varies by field, country and experience",
+
+                work:
+                    "Laboratory, university, research center or field",
+
+                growth:
+                    "Strong",
+
+                about:
+                    "Research scientists investigate questions, conduct experiments and contribute to scientific discoveries.",
+
+                responsibilities:
+                    "Designing experiments, collecting data, analyzing results, writing research papers and presenting findings.",
+
+                skills: [
+                    "Research",
+                    "Data Analysis",
+                    "Critical Thinking",
+                    "Scientific Writing",
+                    "Experimentation"
+                ],
+
+                gettingStarted:
+                    "Choose a scientific field, develop research skills and gain experience through university projects, internships or research assistant positions."
+
+            }
+
+        };
+
+
+        /* GET CAREER FROM URL */
+
+        const params =
+            new URLSearchParams(window.location.search);
+
+        const career =
+            params.get("career");
+
+
+        const selectedCareer =
+            careers[career];
+
+
+        if (selectedCareer) {
+
+            document.getElementById("careerTitle").textContent =
+                selectedCareer.title;
+
+            document.getElementById("careerDescription").textContent =
+                selectedCareer.description;
+
+            document.getElementById("education").textContent =
+                selectedCareer.education;
+
+            document.getElementById("salary").textContent =
+                selectedCareer.salary;
+
+            document.getElementById("workStyle").textContent =
+                selectedCareer.work;
+
+            document.getElementById("growth").textContent =
+                selectedCareer.growth;
+
+            document.getElementById("about").textContent =
+                selectedCareer.about;
+
+            document.getElementById("responsibilities").textContent =
+                selectedCareer.responsibilities;
+
+            document.getElementById("gettingStarted").textContent =
+                selectedCareer.gettingStarted;
+
+
+            const skillsList =
+                document.getElementById("skillsList");
+
+
+            selectedCareer.skills.forEach(function(skill) {
+
+                const skillElement =
+                    document.createElement("span");
+
+                skillElement.className = "skill";
+
+                skillElement.textContent = skill;
+
+                skillsList.appendChild(skillElement);
+
+            });
+
+        }
+
+    </script>
+
+
+</body>
+</html>
+

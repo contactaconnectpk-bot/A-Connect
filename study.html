@@ -1,0 +1,1037 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>A-Connect | Study</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f7f5ff;
+            color: #252336;
+        }
+
+
+        /* NAVIGATION */
+
+        nav {
+            background-color: white;
+            padding: 18px 20px;
+            text-align: center;
+            box-shadow: 0 2px 15px rgba(50, 40, 90, 0.08);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #252336;
+            font-weight: bold;
+            margin: 0 14px;
+            font-size: 16px;
+        }
+
+        nav a:hover {
+            color: #6d5dfc;
+        }
+
+
+        /* HERO */
+
+        .hero {
+            text-align: center;
+            padding: 75px 20px 45px;
+        }
+
+        .hero h1 {
+            font-size: 58px;
+            margin: 0 0 15px;
+        }
+
+        .hero p {
+            max-width: 680px;
+            margin: auto;
+            color: #686477;
+            font-size: 19px;
+            line-height: 1.7;
+        }
+
+
+        /* MAIN */
+
+        .content {
+            max-width: 1100px;
+            margin: auto;
+            padding: 0 20px 80px;
+        }
+
+
+        /* SECTION TITLES */
+
+        .section-title {
+            text-align: center;
+            margin: 25px 0 30px;
+        }
+
+        .section-title h2 {
+            font-size: 31px;
+            margin-bottom: 8px;
+        }
+
+        .section-title p {
+            color: #777287;
+            margin: 0;
+        }
+
+
+        /* TIMER */
+
+        .timer-box {
+            max-width: 720px;
+            margin: 10px auto 70px;
+            padding: 38px;
+            text-align: center;
+            background-color: white;
+            border-radius: 28px;
+            box-shadow: 0 10px 35px rgba(65, 50, 120, 0.10);
+        }
+
+        .timer-box h2 {
+            margin-top: 0;
+            font-size: 28px;
+        }
+
+        .timer-subtitle {
+            color: #777287;
+            margin-bottom: 25px;
+        }
+
+
+        /* TIMER SETTINGS */
+
+        .timer-settings {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin: 25px 0;
+            flex-wrap: wrap;
+        }
+
+        .timer-setting {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #686477;
+        }
+
+        .timer-setting label {
+            font-weight: bold;
+            color: #403b55;
+        }
+
+        .timer-setting input {
+            width: 75px;
+            padding: 9px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 15px;
+            outline: none;
+        }
+
+        .timer-setting input:focus {
+            border-color: #6d5dfc;
+        }
+
+
+        /* TIMER MODE */
+
+        #timerMode {
+            font-weight: bold;
+            color: #5144c8;
+            margin-top: 15px;
+            font-size: 18px;
+        }
+
+
+        /* TIMER */
+
+        #timer {
+            font-size: 65px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            margin: 15px 0 25px;
+            color: #5144c8;
+        }
+
+
+        /* TIMER BUTTONS */
+
+        .timer-buttons button {
+            border: none;
+            padding: 11px 19px;
+            margin: 5px;
+            border-radius: 12px;
+            font-size: 15px;
+            cursor: pointer;
+            background-color: #eeeaff;
+            color: #40369d;
+            font-weight: bold;
+            transition: 0.2s;
+        }
+
+        .timer-buttons button:hover {
+            transform: translateY(-2px);
+        }
+
+        .timer-buttons .start {
+            background-color: #5144c8;
+            color: white;
+        }
+
+
+        /* RESOURCES */
+
+        .resource-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .resource-card {
+            background-color: white;
+            padding: 26px;
+            border-radius: 22px;
+            box-shadow: 0 6px 20px rgba(60, 50, 100, 0.07);
+            transition: 0.25s;
+        }
+
+        .resource-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 28px rgba(60, 50, 100, 0.12);
+        }
+
+        .resource-card h3 {
+            margin-top: 0;
+            font-size: 21px;
+        }
+
+        .resource-card p {
+            color: #625e6c;
+            line-height: 1.65;
+            font-size: 15px;
+        }
+
+
+        /* RESOURCE BUTTON */
+
+        .resource-button {
+            display: inline-block;
+            margin-top: 8px;
+            padding: 10px 16px;
+            border-radius: 10px;
+            text-decoration: none;
+            background-color: #29263b;
+            color: white;
+            font-size: 14px;
+            transition: 0.2s;
+        }
+
+        .resource-button:hover {
+            background-color: #5144c8;
+        }
+
+
+
+        /* STUDY TIPS */
+
+        .tips {
+            margin-top: 70px;
+        }
+
+        .tip {
+            background-color: white;
+            padding: 24px;
+            border-radius: 20px;
+            box-shadow: 0 5px 17px rgba(60, 50, 100, 0.06);
+        }
+
+        .tip h3 {
+            margin-top: 0;
+            font-size: 19px;
+        }
+
+        .tip p {
+            margin-bottom: 0;
+            color: #625e6c;
+            line-height: 1.65;
+        }
+
+
+        /* FOOTER */
+
+        footer {
+            background-color: white;
+            padding: 25px;
+            text-align: center;
+            color: #777287;
+            margin-top: 20px;
+        }
+
+
+        /* TABLET */
+
+        @media (max-width: 850px) {
+
+            .resource-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+        }
+
+
+        /* MOBILE */
+
+        @media (max-width: 600px) {
+
+            nav {
+                padding: 15px 8px;
+            }
+
+            nav a {
+                margin: 0 5px;
+                font-size: 13px;
+            }
+
+            .hero {
+                padding: 55px 20px 40px;
+            }
+
+            .hero h1 {
+                font-size: 42px;
+            }
+
+            .hero p {
+                font-size: 17px;
+            }
+
+            .resource-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .timer-box {
+                padding: 28px 15px;
+            }
+
+            #timer {
+                font-size: 48px;
+            }
+
+            .timer-settings {
+                flex-direction: column;
+                align-items: center;
+                gap: 12px;
+            }
+
+            .scholarship-box {
+                padding: 28px 20px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- NAVIGATION -->
+
+    <nav>
+
+        <a href="index.html">Home</a>
+
+        <a href="study.html">Study</a>
+
+        <a href="career.html">Career</a>
+
+        <a href="money.html">Money</a>
+
+        <a href="skills.html">Skills & Opportunities</a>
+
+        <a href="index.html">Contact</a>
+
+    </nav>
+
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <h1>📚 Study</h1>
+
+        <p>
+            Find useful resources, stay focused with the timer,
+            discover scholarships and make studying a little easier.
+        </p>
+
+    </section>
+
+
+    <main class="content">
+
+
+        <!-- TIMER -->
+
+        <div class="timer-box">
+
+            <h2>⏱️ Focus Timer</h2>
+
+            <p class="timer-subtitle">
+                Choose your study and break time, then get started.
+            </p>
+
+
+            <!-- CUSTOM TIME -->
+
+            <div class="timer-settings">
+
+                <div class="timer-setting">
+
+                    <label for="focusMinutes">
+                        Focus:
+                    </label>
+
+                    <input
+                        type="number"
+                        id="focusMinutes"
+                        value="60"
+                        min="1"
+                        max="180"
+                    >
+
+                    <span>min</span>
+
+                </div>
+
+
+                <div class="timer-setting">
+
+                    <label for="breakMinutes">
+                        Break:
+                    </label>
+
+                    <input
+                        type="number"
+                        id="breakMinutes"
+                        value="10"
+                        min="1"
+                        max="60"
+                    >
+
+                    <span>min</span>
+
+                </div>
+
+            </div>
+
+
+            <!-- MODE -->
+
+            <div id="timerMode">
+                🎯 Focus Time
+            </div>
+
+
+            <!-- TIMER DISPLAY -->
+
+            <div id="timer">
+                01:00:00
+            </div>
+
+
+            <!-- BUTTONS -->
+
+            <div class="timer-buttons">
+
+                <button
+                    class="start"
+                    onclick="startTimer()"
+                >
+                    ▶ Start
+                </button>
+
+                <button onclick="pauseTimer()">
+                    ⏸ Pause
+                </button>
+
+                <button onclick="resetTimer()">
+                    🔄 Reset
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- RESOURCES -->
+
+        <div class="section-title">
+
+            <h2>📖 Places worth checking out</h2>
+
+            <p>
+                Free and useful resources for studying and learning.
+            </p>
+
+        </div>
+
+
+        <div class="resource-grid">
+
+
+            <!-- KHAN ACADEMY -->
+
+            <div class="resource-card">
+
+                <h3>🎓 Khan Academy</h3>
+
+                <p>
+                    Free lessons and practice for maths, science,
+                    computing and other subjects. Great when you
+                    need something explained from scratch.
+                </p>
+
+                <a
+                    href="https://www.khanacademy.org/"
+                    target="_blank"
+                    class="resource-button"
+                >
+                    Visit →
+                </a>
+
+            </div>
+
+
+            <!-- COURSERA -->
+
+            <div class="resource-card">
+
+                <h3>💻 Coursera</h3>
+
+                <p>
+                    Online courses from universities and companies.
+                    Explore subjects ranging from programming and
+                    data science to business.
+                </p>
+
+                <a
+                    href="https://www.coursera.org/"
+                    target="_blank"
+                    class="resource-button"
+                >
+                    Browse Courses →
+                </a>
+
+            </div>
+
+
+            <!-- EDX -->
+
+            <div class="resource-card">
+
+                <h3>🌎 edX</h3>
+
+                <p>
+                    University-level courses from institutions
+                    around the world. Useful when you want to
+                    learn beyond your regular classes.
+                </p>
+
+                <a
+                    href="https://www.edx.org/"
+                    target="_blank"
+                    class="resource-button"
+                >
+                    Explore →
+                </a>
+
+            </div>
+
+
+            <!-- MIT -->
+
+            <div class="resource-card">
+
+                <h3>🧠 MIT OpenCourseWare</h3>
+
+                <p>
+                    MIT course materials available online,
+                    including lectures, assignments, notes
+                    and other learning resources.
+                </p>
+
+                <a
+                    href="https://ocw.mit.edu/"
+                    target="_blank"
+                    class="resource-button"
+                >
+                    Explore MIT →
+                </a>
+
+            </div>
+
+
+            <!-- GOOGLE SCHOLAR -->
+
+            <div class="resource-card">
+
+                <h3>🔎 Google Scholar</h3>
+
+                <p>
+                    Search for research papers, academic sources
+                    and scholarly publications when you need
+                    reliable material for your studies.
+                </p>
+
+                <a
+                    href="https://scholar.google.com/"
+                    target="_blank"
+                    class="resource-button"
+                >
+                    Search →
+                </a>
+
+            </div>
+
+
+            <!-- WOLFRAM -->
+
+            <div class="resource-card">
+
+                <h3>🧮 WolframAlpha</h3>
+
+                <p>
+                    Useful for calculations, maths problems and
+                    exploring concepts when you're stuck on
+                    something.
+                </p>
+
+                <a
+                    href="https://www.wolframalpha.com/"
+                    target="_blank"
+                    class="resource-button"
+                >
+                    Try It →
+                </a>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- STUDY TIPS -->
+
+        <section class="tips">
+
+            <div class="section-title">
+
+                <h2>📝 A few things that actually help</h2>
+
+                <p>
+                    No complicated productivity system required.
+                </p>
+
+            </div>
+
+
+            <div class="resource-grid">
+
+
+                <div class="tip">
+
+                    <h3>⏱️ Work in focused sessions</h3>
+
+                    <p>
+                        Pick one task and give it your full
+                        attention. Use the timer above to
+                        stay on track.
+                    </p>
+
+                </div>
+
+
+                <div class="tip">
+
+                    <h3>📅 Break things down</h3>
+
+                    <p>
+                        Instead of writing "study chemistry",
+                        choose something specific like
+                        "finish chapter 3 notes".
+                    </p>
+
+                </div>
+
+
+                <div class="tip">
+
+                    <h3>🧠 Don't just reread</h3>
+
+                    <p>
+                        Close your notes and try to explain
+                        what you just learned. If you can't,
+                        that's the part you need to review.
+                    </p>
+
+                </div>
+
+
+                <div class="tip">
+
+                    <h3>🔄 Give your brain time</h3>
+
+                    <p>
+                        Revisiting a difficult topic over several
+                        days is usually more useful than trying
+                        to memorize everything in one night.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+            © 2026 A-Connect | Built for young people.
+        </p>
+
+    </footer>
+
+
+    <!-- TIMER JAVASCRIPT -->
+
+    <script>
+
+        let timerInterval = null;
+
+        let currentMode = "focus";
+
+        let timeLeft = 60 * 60;
+
+
+        /* UPDATE TIMER */
+
+        function updateTimer() {
+
+            let hours =
+                Math.floor(timeLeft / 3600);
+
+            let minutes =
+                Math.floor((timeLeft % 3600) / 60);
+
+            let seconds =
+                timeLeft % 60;
+
+
+            hours =
+                hours < 10
+                ? "0" + hours
+                : hours;
+
+
+            minutes =
+                minutes < 10
+                ? "0" + minutes
+                : minutes;
+
+
+            seconds =
+                seconds < 10
+                ? "0" + seconds
+                : seconds;
+
+
+            document.getElementById("timer").innerText =
+                hours + ":" + minutes + ":" + seconds;
+
+        }
+
+
+        /* START */
+
+        function startTimer() {
+
+            if (timerInterval !== null) {
+                return;
+            }
+
+
+            timerInterval = setInterval(function() {
+
+                if (timeLeft > 0) {
+
+                    timeLeft--;
+
+                    updateTimer();
+
+                }
+
+                else {
+
+                    switchMode();
+
+                }
+
+            }, 1000);
+
+        }
+
+
+        /* PAUSE */
+
+        function pauseTimer() {
+
+            clearInterval(timerInterval);
+
+            timerInterval = null;
+
+        }
+
+
+        /* RESET */
+
+        function resetTimer() {
+
+            clearInterval(timerInterval);
+
+            timerInterval = null;
+
+            currentMode = "focus";
+
+
+            let focusTime =
+                parseInt(
+                    document.getElementById("focusMinutes").value
+                );
+
+
+            if (
+                isNaN(focusTime) ||
+                focusTime < 1
+            ) {
+
+                focusTime = 60;
+
+                document.getElementById("focusMinutes").value = 60;
+
+            }
+
+
+            timeLeft = focusTime * 60;
+
+
+            document.getElementById("timerMode").innerText =
+                "🎯 Focus Time";
+
+
+            updateTimer();
+
+        }
+
+
+        /* SWITCH FOCUS / BREAK */
+
+        function switchMode() {
+
+            if (currentMode === "focus") {
+
+                currentMode = "break";
+
+
+                let breakTime =
+                    parseInt(
+                        document.getElementById("breakMinutes").value
+                    );
+
+
+                if (
+                    isNaN(breakTime) ||
+                    breakTime < 1
+                ) {
+
+                    breakTime = 10;
+
+                    document.getElementById("breakMinutes").value = 10;
+
+                }
+
+
+                timeLeft = breakTime * 60;
+
+
+                document.getElementById("timerMode").innerText =
+                    "☕ Break Time";
+
+
+                alert(
+                    "🎉 Focus session complete! Time for a break."
+                );
+
+            }
+
+
+            else {
+
+                currentMode = "focus";
+
+
+                let focusTime =
+                    parseInt(
+                        document.getElementById("focusMinutes").value
+                    );
+
+
+                if (
+                    isNaN(focusTime) ||
+                    focusTime < 1
+                ) {
+
+                    focusTime = 60;
+
+                    document.getElementById("focusMinutes").value = 60;
+
+                }
+
+
+                timeLeft = focusTime * 60;
+
+
+                document.getElementById("timerMode").innerText =
+                    "🎯 Focus Time";
+
+
+                alert(
+                    "✨ Break's over! Ready to focus again?"
+                );
+
+            }
+
+
+            updateTimer();
+
+        }
+
+
+        /* CUSTOM FOCUS TIME */
+
+        document
+            .getElementById("focusMinutes")
+            .addEventListener(
+                "change",
+                function() {
+
+                    if (
+                        timerInterval === null &&
+                        currentMode === "focus"
+                    ) {
+
+                        let value =
+                            parseInt(this.value);
+
+
+                        if (
+                            isNaN(value) ||
+                            value < 1
+                        ) {
+
+                            value = 60;
+
+                            this.value = 60;
+
+                        }
+
+
+                        timeLeft = value * 60;
+
+                        updateTimer();
+
+                    }
+
+                }
+            );
+
+
+        /* CUSTOM BREAK TIME */
+
+        document
+            .getElementById("breakMinutes")
+            .addEventListener(
+                "change",
+                function() {
+
+                    if (
+                        timerInterval === null &&
+                        currentMode === "break"
+                    ) {
+
+                        let value =
+                            parseInt(this.value);
+
+
+                        if (
+                            isNaN(value) ||
+                            value < 1
+                        ) {
+
+                            value = 10;
+
+                            this.value = 10;
+
+                        }
+
+
+                        timeLeft = value * 60;
+
+                        updateTimer();
+
+                    }
+
+                }
+            );
+
+
+        /* INITIAL TIMER */
+
+        updateTimer();
+
+    </script>
+
+
+</body>
+
+</html>
+

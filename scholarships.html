@@ -1,0 +1,918 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>A-Connect | Scholarships</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f7ff;
+            margin: 0;
+            color: #222;
+        }
+
+        /* NAVIGATION */
+
+        nav {
+            background-color: white;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav a {
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 17px;
+            color: #222;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        /* HERO */
+
+        .hero {
+            text-align: center;
+            padding: 70px 20px 40px;
+        }
+
+        .hero h1 {
+            font-size: 52px;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 20px;
+            color: #555;
+            max-width: 700px;
+            margin: auto;
+            line-height: 1.6;
+        }
+
+        /* SEARCH */
+
+        .search-section {
+            max-width: 900px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        .search-box {
+            background-color: white;
+            padding: 25px;
+            border-radius: 20px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 15px;
+            font-size: 17px;
+            border: 1px solid #ddd;
+            border-radius: 12px;
+            margin-bottom: 20px;
+        }
+
+        .filters {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .filters select {
+            flex: 1;
+            min-width: 180px;
+            padding: 12px;
+            font-size: 15px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            background-color: white;
+        }
+
+        /* SCHOLARSHIPS */
+
+        .scholarships {
+            max-width: 1100px;
+            margin: auto;
+            padding: 40px 20px 80px;
+        }
+
+        .scholarships h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 30px;
+        }
+
+        .scholarship-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .scholarship-card {
+            background-color: white;
+            padding: 25px;
+            border-radius: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: 0.3s;
+        }
+
+        .scholarship-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+        }
+
+        .scholarship-card h3 {
+            font-size: 22px;
+            margin-top: 0;
+        }
+
+        .scholarship-card p {
+            color: #555;
+            line-height: 1.5;
+        }
+
+        /* TAGS */
+
+        .tag {
+            display: inline-block;
+            background-color: #f5f7ff;
+            padding: 7px 10px;
+            border-radius: 8px;
+            font-size: 13px;
+            margin: 3px;
+        }
+
+        .details {
+            margin: 15px 0;
+        }
+
+        /* STATUS */
+
+        .status {
+            display: inline-block;
+            padding: 7px 12px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .open {
+            background-color: #e8f7ed;
+            color: #218739;
+        }
+
+        .upcoming {
+            background-color: #fff4df;
+            color: #a86600;
+        }
+
+        .closed {
+            background-color: #f5e8e8;
+            color: #a33a3a;
+        }
+
+        /* DEADLINE */
+
+        .deadline {
+            font-size: 14px;
+            margin: 10px 0;
+            color: #555;
+        }
+
+        /* BUTTON */
+
+        .apply-button {
+            display: inline-block;
+            text-decoration: none;
+            background-color: #222;
+            color: white;
+            padding: 11px 18px;
+            border-radius: 10px;
+            margin-top: 10px;
+            margin-right: 5px;
+        }
+
+        .apply-button:hover {
+            opacity: 0.8;
+        }
+
+        /* NO RESULTS */
+
+        #noResults {
+            display: none;
+            text-align: center;
+            background-color: white;
+            padding: 30px;
+            border-radius: 20px;
+            color: #666;
+        }
+
+        /* FOOTER */
+
+        footer {
+            background-color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 600px) {
+
+            nav {
+                padding: 15px 8px;
+            }
+
+            nav a {
+                margin: 0 5px;
+                font-size: 13px;
+            }
+
+            .hero {
+                padding: 50px 20px 30px;
+            }
+
+            .hero h1 {
+                font-size: 40px;
+            }
+
+            .hero p {
+                font-size: 18px;
+            }
+
+            .filters {
+                flex-direction: column;
+            }
+
+            .filters select {
+                width: 100%;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- NAVIGATION -->
+
+    <nav>
+
+        <a href="index.html">Home</a>
+
+        <a href="study.html">Study</a>
+
+        <a href="career.html">Career</a>
+
+        <a href="money.html">Money</a>
+
+        <a href="skills.html">Skills & Opportunities</a>
+
+        <a href="index.html">Contact</a>
+
+    </nav>
+
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <h1>🎓 Scholarship Finder</h1>
+
+        <p>
+            Discover scholarships and funding opportunities
+            that can help you achieve your educational goals.
+        </p>
+
+    </section>
+
+
+    <!-- SEARCH AND FILTERS -->
+
+    <section class="search-section">
+
+        <div class="search-box">
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="🔎 Search scholarships..."
+                onkeyup="filterScholarships()"
+            >
+
+            <div class="filters">
+
+                <!-- COUNTRY -->
+
+                <select
+                    id="countryFilter"
+                    onchange="filterScholarships()"
+                >
+
+                    <option value="all">All Countries</option>
+
+                    <option value="pakistan">Pakistan</option>
+
+                    <option value="uk">UK</option>
+
+                    <option value="germany">Germany</option>
+
+                    <option value="canada">Canada</option>
+
+                    <option value="australia">Australia</option>
+
+                    <option value="turkiye">Türkiye</option>
+
+                    <option value="international">International</option>
+
+                </select>
+
+
+                <!-- LEVEL -->
+
+                <select
+                    id="levelFilter"
+                    onchange="filterScholarships()"
+                >
+
+                    <option value="all">All Study Levels</option>
+
+                    <option value="undergraduate">Undergraduate</option>
+
+                    <option value="masters">Master's</option>
+
+                    <option value="phd">PhD</option>
+
+                    <option value="graduate">Graduate</option>
+
+                </select>
+
+
+                <!-- FUNDING -->
+
+                <select
+                    id="fundingFilter"
+                    onchange="filterScholarships()"
+                >
+
+                    <option value="all">All Funding Types</option>
+
+                    <option value="fully-funded">Fully Funded</option>
+
+                    <option value="partial">Partial Funding</option>
+
+                    <option value="funding">Funding Available</option>
+
+                </select>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- SCHOLARSHIPS -->
+
+    <section class="scholarships">
+
+        <h2>Available Opportunities</h2>
+
+
+        <div
+            class="scholarship-grid"
+            id="scholarshipGrid"
+        >
+
+
+            <!-- HEC -->
+
+            <div
+                class="scholarship-card"
+                data-country="pakistan"
+                data-level="undergraduate"
+                data-funding="partial"
+            >
+
+                <h3>HEC Need-Based Scholarships</h3>
+
+                <span class="status open">
+                    🟢 Open
+                </span>
+
+                <p>
+                    Financial assistance opportunities for
+                    eligible students studying at participating
+                    Pakistani universities.
+                </p>
+
+                <div class="details">
+
+                    <span class="tag">🇵🇰 Pakistan</span>
+
+                    <span class="tag">🎓 Undergraduate</span>
+
+                    <span class="tag">💰 Financial Assistance</span>
+
+                </div>
+
+                <p class="deadline">
+                    📅 Check current deadline on official HEC website
+                </p>
+
+                <a
+                    href="scholarship-details.html?scholarship=hec"
+                    class="apply-button"
+                >
+                    View Details
+                </a>
+
+                <a
+                    href="https://www.hec.gov.pk/"
+                    target="_blank"
+                    class="apply-button"
+                >
+                    Official Website
+                </a>
+
+            </div>
+
+
+            <!-- CHEVENING -->
+
+            <div
+                class="scholarship-card"
+                data-country="uk"
+                data-level="masters"
+                data-funding="fully-funded"
+            >
+
+                <h3>Chevening Scholarships</h3>
+
+                <span class="status open">
+                    🟢 Open
+                </span>
+
+                <p>
+                    UK Government scholarships for outstanding
+                    emerging leaders to pursue a master's degree
+                    in the United Kingdom.
+                </p>
+
+                <div class="details">
+
+                    <span class="tag">🇬🇧 UK</span>
+
+                    <span class="tag">🎓 Master's</span>
+
+                    <span class="tag">💰 Fully Funded</span>
+
+                </div>
+
+                <p class="deadline">
+                    📅 Deadline: 6 October 2026
+                </p>
+
+                <a
+                    href="scholarship-details.html?scholarship=chevening"
+                    class="apply-button"
+                >
+                    View Details
+                </a>
+
+                <a
+                    href="https://www.chevening.org/scholarships/"
+                    target="_blank"
+                    class="apply-button"
+                >
+                    Official Website
+                </a>
+
+            </div>
+
+
+            <!-- DAAD -->
+
+            <div
+                class="scholarship-card"
+                data-country="germany"
+                data-level="masters"
+                data-funding="funding"
+            >
+
+                <h3>DAAD Scholarships</h3>
+
+                <span class="status open">
+                    🟢 Open
+                </span>
+
+                <p>
+                    DAAD provides scholarship opportunities for
+                    international students and researchers interested
+                    in studying in Germany.
+                </p>
+
+                <div class="details">
+
+                    <span class="tag">🇩🇪 Germany</span>
+
+                    <span class="tag">🎓 Master's</span>
+
+                    <span class="tag">💰 Funding Available</span>
+
+                </div>
+
+                <p class="deadline">
+                    📅 Deadlines vary by programme
+                </p>
+
+                <a
+                    href="scholarship-details.html?scholarship=daad"
+                    class="apply-button"
+                >
+                    View Details
+                </a>
+
+                <a
+                    href="https://www.daad.de/en/"
+                    target="_blank"
+                    class="apply-button"
+                >
+                    Official Website
+                </a>
+
+            </div>
+
+
+            <!-- TÜRKIYE -->
+
+            <div
+                class="scholarship-card"
+                data-country="turkiye"
+                data-level="undergraduate"
+                data-funding="fully-funded"
+            >
+
+                <h3>Türkiye Scholarships</h3>
+
+                <span class="status upcoming">
+                    🟠 Upcoming
+                </span>
+
+                <p>
+                    Government scholarship opportunities for
+                    international students at undergraduate,
+                    master's and doctoral levels.
+                </p>
+
+                <div class="details">
+
+                    <span class="tag">🇹🇷 Türkiye</span>
+
+                    <span class="tag">🎓 Undergraduate</span>
+
+                    <span class="tag">💰 Fully Funded</span>
+
+                </div>
+
+                <p class="deadline">
+                    📅 Application period varies each year
+                </p>
+
+                <a
+                    href="scholarship-details.html?scholarship=turkiye"
+                    class="apply-button"
+                >
+                    View Details
+                </a>
+
+                <a
+                    href="https://www.turkiyeburslari.gov.tr/"
+                    target="_blank"
+                    class="apply-button"
+                >
+                    Official Website
+                </a>
+
+            </div>
+
+
+            <!-- AUSTRALIA -->
+
+            <div
+                class="scholarship-card"
+                data-country="australia"
+                data-level="masters"
+                data-funding="fully-funded"
+            >
+
+                <h3>Australia Awards Scholarships</h3>
+
+                <span class="status upcoming">
+                    🟠 Upcoming
+                </span>
+
+                <p>
+                    Australian Government scholarship opportunities
+                    for eligible students from participating countries.
+                </p>
+
+                <div class="details">
+
+                    <span class="tag">🇦🇺 Australia</span>
+
+                    <span class="tag">🎓 Master's</span>
+
+                    <span class="tag">💰 Fully Funded</span>
+
+                </div>
+
+                <p class="deadline">
+                    📅 Deadline varies by country
+                </p>
+
+                <a
+                    href="scholarship-details.html?scholarship=australia"
+                    class="apply-button"
+                >
+                    View Details
+                </a>
+
+                <a
+                    href="https://www.dfat.gov.au/people-to-people/australia-awards"
+                    target="_blank"
+                    class="apply-button"
+                >
+                    Official Website
+                </a>
+
+            </div>
+
+
+            <!-- CANADA -->
+
+            <div
+                class="scholarship-card"
+                data-country="canada"
+                data-level="graduate"
+                data-funding="funding"
+            >
+
+                <h3>Canada Graduate Scholarships</h3>
+
+                <span class="status open">
+                    🟢 Open
+                </span>
+
+                <p>
+                    Canadian graduate scholarship programs that
+                    support eligible students undertaking research-based
+                    graduate studies.
+                </p>
+
+                <div class="details">
+
+                    <span class="tag">🇨🇦 Canada</span>
+
+                    <span class="tag">🎓 Graduate</span>
+
+                    <span class="tag">💰 Funding Available</span>
+
+                </div>
+
+                <p class="deadline">
+                    📅 Deadlines vary by programme
+                </p>
+
+                <a
+                    href="scholarship-details.html?scholarship=canada"
+                    class="apply-button"
+                >
+                    View Details
+                </a>
+
+                <a
+                    href="https://www.canada.ca/en/services/benefits/education/student-aid/scholarships.html"
+                    target="_blank"
+                    class="apply-button"
+                >
+                    Official Website
+                </a>
+
+            </div>
+
+
+            <!-- ERASMUS -->
+
+            <div
+                class="scholarship-card"
+                data-country="international"
+                data-level="masters"
+                data-funding="fully-funded"
+            >
+
+                <h3>Erasmus Mundus Joint Masters</h3>
+
+                <span class="status upcoming">
+                    🟠 Upcoming
+                </span>
+
+                <p>
+                    International master's programmes offered
+                    by partnerships of universities across Europe.
+                </p>
+
+                <div class="details">
+
+                    <span class="tag">🇪🇺 Europe</span>
+
+                    <span class="tag">🎓 Master's</span>
+
+                    <span class="tag">💰 Scholarship Funding</span>
+
+                </div>
+
+                <p class="deadline">
+                    📅 Deadlines vary by programme
+                </p>
+
+                <a
+                    href="scholarship-details.html?scholarship=erasmus"
+                    class="apply-button"
+                >
+                    View Details
+                </a>
+
+                <a
+                    href="https://erasmus-plus.ec.europa.eu/"
+                    target="_blank"
+                    class="apply-button"
+                >
+                    Official Website
+                </a>
+
+            </div>
+
+
+        </div>
+
+
+        <!-- NO RESULTS -->
+
+        <div id="noResults">
+
+            <h3>No scholarships found 😕</h3>
+
+            <p>
+                Try changing your search or filters.
+            </p>
+
+        </div>
+
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+            © 2026 A-Connect | Built for young people.
+        </p>
+
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script>
+
+        function filterScholarships() {
+
+            let search =
+                document
+                .getElementById("searchInput")
+                .value
+                .toLowerCase();
+
+
+            let country =
+                document
+                .getElementById("countryFilter")
+                .value;
+
+
+            let level =
+                document
+                .getElementById("levelFilter")
+                .value;
+
+
+            let funding =
+                document
+                .getElementById("fundingFilter")
+                .value;
+
+
+            let cards =
+                document
+                .querySelectorAll(".scholarship-card");
+
+
+            let visibleCards = 0;
+
+
+            cards.forEach(function(card) {
+
+                let text =
+                    card.innerText.toLowerCase();
+
+                let cardCountry =
+                    card.dataset.country;
+
+                let cardLevel =
+                    card.dataset.level;
+
+                let cardFunding =
+                    card.dataset.funding;
+
+
+                let matchesSearch =
+                    text.includes(search);
+
+                let matchesCountry =
+                    country === "all" ||
+                    cardCountry === country;
+
+                let matchesLevel =
+                    level === "all" ||
+                    cardLevel === level;
+
+                let matchesFunding =
+                    funding === "all" ||
+                    cardFunding === funding;
+
+
+                if (
+                    matchesSearch &&
+                    matchesCountry &&
+                    matchesLevel &&
+                    matchesFunding
+                ) {
+
+                    card.style.display = "block";
+
+                    visibleCards++;
+
+                } else {
+
+                    card.style.display = "none";
+
+                }
+
+            });
+
+
+            if (visibleCards === 0) {
+
+                document
+                .getElementById("noResults")
+                .style.display = "block";
+
+            } else {
+
+                document
+                .getElementById("noResults")
+                .style.display = "none";
+
+            }
+
+        }
+
+    </script>
+
+
+</body>
+</html>
+
+

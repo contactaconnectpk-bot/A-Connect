@@ -1,0 +1,735 @@
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>A-Connect | Career</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f7f5ff;
+            color: #252336;
+        }
+
+
+        /* NAVIGATION */
+
+        nav {
+            background-color: white;
+            padding: 18px 20px;
+            text-align: center;
+            box-shadow: 0 2px 15px rgba(50, 40, 90, 0.08);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #252336;
+            font-weight: bold;
+            margin: 0 14px;
+            font-size: 16px;
+        }
+
+        nav a:hover {
+            color: #6d5dfc;
+        }
+
+
+        /* HERO */
+
+        .hero {
+            text-align: center;
+            padding: 75px 20px 45px;
+        }
+
+        .hero h1 {
+            font-size: 58px;
+            margin: 0 0 15px;
+        }
+
+        .hero p {
+            max-width: 700px;
+            margin: auto;
+            color: #686477;
+            font-size: 19px;
+            line-height: 1.7;
+        }
+
+
+        /* CONTENT */
+
+        .content {
+            max-width: 1100px;
+            margin: auto;
+            padding: 0 20px 80px;
+        }
+
+
+        /* TITLES */
+
+        .section-title {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .section-title h2 {
+            font-size: 31px;
+            margin-bottom: 8px;
+        }
+
+        .section-title p {
+            color: #777287;
+            line-height: 1.6;
+        }
+
+
+        /* CAREER CARDS */
+
+        .career-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .career-card {
+            background-color: white;
+            padding: 27px;
+            border-radius: 22px;
+            box-shadow: 0 6px 20px rgba(60, 50, 100, 0.07);
+            transition: 0.25s;
+        }
+
+        .career-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 28px rgba(60, 50, 100, 0.12);
+        }
+
+        .career-card h3 {
+            margin-top: 0;
+            font-size: 21px;
+        }
+
+        .career-card p {
+            color: #625e6c;
+            line-height: 1.65;
+            font-size: 15px;
+        }
+
+
+        /* BUTTON */
+
+        .career-button {
+            display: inline-block;
+            margin-top: 8px;
+            padding: 10px 16px;
+            border-radius: 10px;
+            text-decoration: none;
+            background-color: #29263b;
+            color: white;
+            font-size: 14px;
+            transition: 0.2s;
+        }
+
+        .career-button:hover {
+            background-color: #5144c8;
+        }
+
+
+        /* CAREER PATH BOX */
+
+        .path-box {
+            margin: 70px auto;
+            max-width: 850px;
+            background: linear-gradient(
+                135deg,
+                #ffffff,
+                #f0edff
+            );
+            padding: 40px;
+            border-radius: 27px;
+            text-align: center;
+            box-shadow: 0 8px 25px rgba(60, 50, 100, 0.08);
+        }
+
+        .path-box h2 {
+            margin-top: 0;
+            font-size: 29px;
+        }
+
+        .path-box p {
+            max-width: 650px;
+            margin: 0 auto 25px;
+            color: #625e6c;
+            line-height: 1.7;
+        }
+
+
+        /* CHECKLIST */
+
+        .checklist {
+            max-width: 850px;
+            margin: 0 auto 70px;
+            background-color: white;
+            padding: 32px;
+            border-radius: 24px;
+            box-shadow: 0 6px 20px rgba(60, 50, 100, 0.07);
+        }
+
+        .checklist h2 {
+            text-align: center;
+            margin-top: 0;
+        }
+
+        .check-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            padding: 15px 5px;
+            border-bottom: 1px solid #eeeaf5;
+        }
+
+        .check-item:last-child {
+            border-bottom: none;
+        }
+
+        .check-number {
+            min-width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background-color: #eeeaff;
+            color: #5144c8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        .check-item h3 {
+            margin: 0 0 5px;
+            font-size: 17px;
+        }
+
+        .check-item p {
+            margin: 0;
+            color: #6b6675;
+            line-height: 1.5;
+            font-size: 14px;
+        }
+
+
+        /* FOOTER */
+
+        footer {
+            background-color: white;
+            padding: 25px;
+            text-align: center;
+            color: #777287;
+        }
+
+
+        /* TABLET */
+
+        @media (max-width: 850px) {
+
+            .career-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+        }
+
+
+        /* MOBILE */
+
+        @media (max-width: 600px) {
+
+            nav {
+                padding: 15px 8px;
+            }
+
+            nav a {
+                margin: 0 5px;
+                font-size: 13px;
+            }
+
+            .hero {
+                padding: 55px 20px 40px;
+            }
+
+            .hero h1 {
+                font-size: 42px;
+            }
+
+            .hero p {
+                font-size: 17px;
+            }
+
+            .career-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .path-box {
+                padding: 30px 20px;
+            }
+
+            .checklist {
+                padding: 25px 20px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- NAVIGATION -->
+
+    <nav>
+
+        <a href="index.html">Home</a>
+
+        <a href="study.html">Study</a>
+
+        <a href="career.html">Career</a>
+
+        <a href="money.html">Money</a>
+
+        <a href="skills.html">Skills & Opportunities</a>
+
+        <a href="index.html">Contact</a>
+
+    </nav>
+
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <h1>💼 Career</h1>
+
+        <p>
+            Not sure what comes next?
+            Explore career paths, build experience,
+            improve your CV and find opportunities that
+            can help you move forward.
+        </p>
+
+    </section>
+
+
+    <main class="content">
+
+
+        <!-- CAREER AREAS -->
+
+        <div class="section-title">
+
+            <h2>🧭 Where do you want to start?</h2>
+
+            <p>
+                A few places to begin when you're figuring out
+                your career.
+            </p>
+
+        </div>
+
+
+        <div class="career-grid">
+
+
+            <!-- CAREER EXPLORATION -->
+
+            <div class="career-card">
+
+                <h3>🧭 Explore Career Paths</h3>
+
+                <p>
+                    Learn about different careers, what people
+                    actually do in them, and which skills and
+                    qualifications they usually require.
+                </p>
+
+                <a
+                    href="https://www.careerexplorer.com/"
+                    target="_blank"
+                    class="career-button"
+                >
+                    Explore Careers →
+                </a>
+
+            </div>
+
+
+            <!-- LINKEDIN -->
+
+            <div class="career-card">
+
+                <h3>💼 LinkedIn</h3>
+
+                <p>
+                    Create a professional profile, connect with
+                    people in your field and discover jobs,
+                    internships and career opportunities.
+                </p>
+
+                <a
+                    href="https://www.linkedin.com/"
+                    target="_blank"
+                    class="career-button"
+                >
+                    Visit LinkedIn →
+                </a>
+
+            </div>
+
+
+            <!-- INDEED -->
+
+            <div class="career-card">
+
+                <h3>🔎 Indeed</h3>
+
+                <p>
+                    Search for jobs and internships and explore
+                    different roles, companies and career options.
+                </p>
+
+                <a
+                    href="https://www.indeed.com/"
+                    target="_blank"
+                    class="career-button"
+                >
+                    Search Jobs →
+                </a>
+
+            </div>
+
+
+            <!-- FORAGE -->
+
+            <div class="career-card">
+
+                <h3>🧑‍💻 Forage</h3>
+
+                <p>
+                    Try virtual job simulations from companies
+                    and get a feel for what working in different
+                    industries can actually be like.
+                </p>
+
+                <a
+                    href="https://www.theforage.com/"
+                    target="_blank"
+                    class="career-button"
+                >
+                    Try Simulations →
+                </a>
+
+            </div>
+
+
+            <!-- EUROPASS -->
+
+            <div class="career-card">
+
+                <h3>📄 Europass</h3>
+
+                <p>
+                    Create and manage a CV and learn more about
+                    presenting your education, skills and experience
+                    professionally.
+                </p>
+
+                <a
+                    href="https://europass.europa.eu/"
+                    target="_blank"
+                    class="career-button"
+                >
+                    Build Your CV →
+                </a>
+
+            </div>
+
+
+            <!-- INTERNSHIPS -->
+
+            <div class="career-card">
+
+                <h3>🌱 Find Experience</h3>
+
+                <p>
+                    Internships, volunteer work, projects and
+                    competitions can all help you build experience
+                    before landing your first full-time job.
+                </p>
+
+                <a
+                    href="skills.html"
+                    class="career-button"
+                >
+                    Find Opportunities →
+                </a>
+
+            </div>
+
+
+        </div>
+
+
+        <!-- CAREER PATH -->
+
+        <div class="path-box">
+
+            <h2>✨ Don't know what career to choose?</h2>
+
+            <p>
+                You don't need to have your entire future figured
+                out right now. Start by thinking about what you're
+                naturally curious about, what you're good at and
+                what kind of work you can imagine yourself enjoying.
+            </p>
+
+            <a
+                href="https://www.careerexplorer.com/"
+                target="_blank"
+                class="career-button"
+            >
+                Start Exploring →
+            </a>
+
+        </div>
+
+
+        <!-- CAREER CHECKLIST -->
+
+        <div class="section-title">
+
+            <h2>📋 Build your career step by step</h2>
+
+            <p>
+                You don't have to do everything at once.
+            </p>
+
+        </div>
+
+
+        <div class="checklist">
+
+
+            <div class="check-item">
+
+                <div class="check-number">
+                    1
+                </div>
+
+                <div>
+
+                    <h3>Know yourself</h3>
+
+                    <p>
+                        Think about your interests, strengths,
+                        values and the kind of environment you
+                        would like to work in.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="check-item">
+
+                <div class="check-number">
+                    2
+                </div>
+
+                <div>
+
+                    <h3>Explore different careers</h3>
+
+                    <p>
+                        Don't choose a career just because
+                        everyone around you is choosing it.
+                        Research what different careers are
+                        actually like.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="check-item">
+
+                <div class="check-number">
+                    3
+                </div>
+
+                <div>
+
+                    <h3>Build useful skills</h3>
+
+                    <p>
+                        Pick skills that match the career paths
+                        you're interested in and practise them
+                        through courses and projects.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="check-item">
+
+                <div class="check-number">
+                    4
+                </div>
+
+                <div>
+
+                    <h3>Get some experience</h3>
+
+                    <p>
+                        Look for internships, volunteering,
+                        competitions, projects or other ways
+                        to gain practical experience.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="check-item">
+
+                <div class="check-number">
+                    5
+                </div>
+
+                <div>
+
+                    <h3>Make your CV</h3>
+
+                    <p>
+                        Keep your CV simple and focus on relevant
+                        education, skills, projects, experience
+                        and achievements.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="check-item">
+
+                <div class="check-number">
+                    6
+                </div>
+
+                <div>
+
+                    <h3>Keep improving</h3>
+
+                    <p>
+                        Your first career choice doesn't have to
+                        be your final one. Keep learning and
+                        adjusting as you gain experience.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+        <!-- INTERVIEW -->
+
+        <div class="section-title">
+
+            <h2>🎤 Getting ready for an interview?</h2>
+
+            <p>
+                A little preparation can make a huge difference.
+            </p>
+
+        </div>
+
+
+        <div class="career-grid">
+
+
+            <div class="career-card">
+
+                <h3>📝 Research the organisation</h3>
+
+                <p>
+                    Know what the organisation does, what it
+                    values and what role you're applying for.
+                </p>
+
+            </div>
+
+
+            <div class="career-card">
+
+                <h3>💬 Practise your answers</h3>
+
+                <p>
+                    Prepare examples that show your skills,
+                    teamwork, problem-solving and achievements.
+                </p>
+
+            </div>
+
+
+            <div class="career-card">
+
+                <h3>👔 Keep it professional</h3>
+
+                <p>
+                    Be on time, communicate clearly and show
+                    genuine interest in the opportunity.
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+            © 2026 A-Connect | Built for young people.
+        </p>
+
+    </footer>
+
+
+</body>
+
+</html>
+

@@ -1,0 +1,567 @@
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>A-Connect | Skills & Opportunities</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f7f5ff;
+            color: #252336;
+        }
+
+        nav {
+            background-color: white;
+            padding: 18px 20px;
+            text-align: center;
+            box-shadow: 0 2px 15px rgba(50, 40, 90, 0.08);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #252336;
+            font-weight: bold;
+            margin: 0 14px;
+            font-size: 16px;
+        }
+
+        nav a:hover {
+            color: #6d5dfc;
+        }
+
+
+        /* HERO */
+
+        .hero {
+            text-align: center;
+            padding: 75px 20px 45px;
+        }
+
+        .hero h1 {
+            font-size: 54px;
+            margin: 0 0 15px;
+        }
+
+        .hero p {
+            max-width: 700px;
+            margin: auto;
+            color: #686477;
+            font-size: 19px;
+            line-height: 1.7;
+        }
+
+
+        /* CONTENT */
+
+        .content {
+            max-width: 1100px;
+            margin: auto;
+            padding: 0 20px 80px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .section-title h2 {
+            font-size: 30px;
+            margin-bottom: 8px;
+        }
+
+        .section-title p {
+            color: #777287;
+            line-height: 1.6;
+        }
+
+
+        /* CARDS */
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .card {
+            background-color: white;
+            padding: 27px;
+            border-radius: 22px;
+            box-shadow: 0 6px 20px rgba(60, 50, 100, 0.07);
+            transition: 0.25s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 28px rgba(60, 50, 100, 0.12);
+        }
+
+        .card h3 {
+            margin-top: 0;
+            font-size: 21px;
+        }
+
+        .card p {
+            color: #625e6c;
+            line-height: 1.65;
+            font-size: 15px;
+        }
+
+
+        /* BUTTON */
+
+        .button {
+            display: inline-block;
+            margin-top: 8px;
+            padding: 10px 16px;
+            border-radius: 10px;
+            text-decoration: none;
+            background-color: #29263b;
+            color: white;
+            font-size: 14px;
+        }
+
+        .button:hover {
+            background-color: #5144c8;
+        }
+
+
+        /* OPPORTUNITY BOX */
+
+        .opportunity-box {
+            margin: 70px auto;
+            max-width: 900px;
+            background-color: white;
+            padding: 35px;
+            border-radius: 25px;
+            box-shadow: 0 7px 25px rgba(60, 50, 100, 0.08);
+        }
+
+        .opportunity-box h2 {
+            text-align: center;
+            margin-top: 0;
+        }
+
+        .opportunity {
+            padding: 20px 5px;
+            border-bottom: 1px solid #eeeaf5;
+        }
+
+        .opportunity:last-child {
+            border-bottom: none;
+        }
+
+        .opportunity h3 {
+            margin: 0 0 7px;
+        }
+
+        .opportunity p {
+            color: #625e6c;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+
+
+        /* TIP BOX */
+
+        .tip-box {
+            max-width: 850px;
+            margin: 70px auto;
+            padding: 40px;
+            text-align: center;
+            background: linear-gradient(
+                135deg,
+                #ffffff,
+                #f0edff
+            );
+            border-radius: 27px;
+            box-shadow: 0 8px 25px rgba(60, 50, 100, 0.08);
+        }
+
+        .tip-box h2 {
+            margin-top: 0;
+        }
+
+        .tip-box p {
+            color: #625e6c;
+            line-height: 1.7;
+        }
+
+
+        /* FOOTER */
+
+        footer {
+            background-color: white;
+            padding: 25px;
+            text-align: center;
+            color: #777287;
+        }
+
+
+        /* MOBILE */
+
+        @media (max-width: 850px) {
+
+            .card-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+        }
+
+        @media (max-width: 600px) {
+
+            nav {
+                padding: 15px 8px;
+            }
+
+            nav a {
+                margin: 0 5px;
+                font-size: 13px;
+            }
+
+            .hero {
+                padding: 55px 20px 40px;
+            }
+
+            .hero h1 {
+                font-size: 40px;
+            }
+
+            .hero p {
+                font-size: 17px;
+            }
+
+            .card-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .opportunity-box {
+                padding: 25px 20px;
+            }
+
+            .tip-box {
+                padding: 30px 20px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- NAVIGATION -->
+
+    <nav>
+
+        <a href="index.html">Home</a>
+
+        <a href="study.html">Study</a>
+
+        <a href="career.html">Career</a>
+
+        <a href="money.html">Money</a>
+
+        <a href="skills.html">Skills & Opportunities</a>
+
+        <a href="index.html">Contact</a>
+
+    </nav>
+
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <h1>🚀 Skills & Opportunities</h1>
+
+        <p>
+            Build skills that actually help you in university,
+            work and everyday life — and discover opportunities
+            where you can put them to use.
+        </p>
+
+    </section>
+
+
+    <main class="content">
+
+
+        <!-- SKILLS -->
+
+        <div class="section-title">
+
+            <h2>🛠️ Skills worth learning</h2>
+
+            <p>
+                You don't need to learn everything.
+                Pick something useful and start small.
+            </p>
+
+        </div>
+
+
+        <div class="card-grid">
+
+
+            <div class="card">
+
+                <h3>💻 Coding & Technology</h3>
+
+                <p>
+                    Learn programming, websites, data analysis,
+                    artificial intelligence and other digital skills.
+                </p>
+
+                <a
+                    href="https://www.freecodecamp.org/"
+                    target="_blank"
+                    class="button"
+                >
+                    Start Learning →
+                </a>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>🎨 Design</h3>
+
+                <p>
+                    Explore graphic design, UI design, presentations,
+                    photography and other creative skills.
+                </p>
+
+                <a
+                    href="https://www.canva.com/designschool/"
+                    target="_blank"
+                    class="button"
+                >
+                    Explore →
+                </a>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>🗣️ Communication</h3>
+
+                <p>
+                    Improve public speaking, writing, presentations
+                    and the way you communicate your ideas.
+                </p>
+
+                <a
+                    href="https://www.toastmasters.org/"
+                    target="_blank"
+                    class="button"
+                >
+                    Learn More →
+                </a>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>📊 Data & Research</h3>
+
+                <p>
+                    Learn how to work with data, find reliable
+                    information and understand research.
+                </p>
+
+                <a
+                    href="https://www.kaggle.com/learn"
+                    target="_blank"
+                    class="button"
+                >
+                    Learn →
+                </a>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>🤝 Leadership</h3>
+
+                <p>
+                    Build teamwork, problem-solving, decision-making
+                    and leadership skills through real experiences.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>💼 Career Skills</h3>
+
+                <p>
+                    Learn how to create a CV, prepare for interviews,
+                    build a professional profile and network.
+                </p>
+
+                <a
+                    href="career.html"
+                    class="button"
+                >
+                    Career Guide →
+                </a>
+
+            </div>
+
+
+        </div>
+
+
+        <!-- OPPORTUNITIES -->
+
+        <div class="opportunity-box">
+
+            <h2>🌍 Where can you use your skills?</h2>
+
+
+            <div class="opportunity">
+
+                <h3>🏆 Competitions & Challenges</h3>
+
+                <p>
+                    Competitions can help you practise your skills,
+                    build projects and add meaningful experiences
+                    to your CV.
+                </p>
+
+                <a
+                    href="https://devpost.com/"
+                    target="_blank"
+                    class="button"
+                >
+                    Find Competitions →
+                </a>
+
+            </div>
+
+
+            <div class="opportunity">
+
+                <h3>🤝 Volunteering</h3>
+
+                <p>
+                    Volunteering is a good way to gain experience,
+                    meet people and contribute to something useful.
+                </p>
+
+                <a
+                    href="https://www.volunteermatch.org/"
+                    target="_blank"
+                    class="button"
+                >
+                    Explore →
+                </a>
+
+            </div>
+
+
+            <div class="opportunity">
+
+                <h3>💻 Freelancing</h3>
+
+                <p>
+                    If you develop a marketable skill, freelancing
+                    can be one way to gain practical experience
+                    and potentially earn money.
+                </p>
+
+                <a
+                    href="https://www.upwork.com/"
+                    target="_blank"
+                    class="button"
+                >
+                    Explore Freelancing →
+                </a>
+
+            </div>
+
+
+            <div class="opportunity">
+
+                <h3>🎓 Youth Programs</h3>
+
+                <p>
+                    Look for fellowships, exchanges, workshops
+                    and other programs designed for young people.
+                </p>
+
+                <a
+                    href="https://www.aiesec.org/"
+                    target="_blank"
+                    class="button"
+                >
+                    Explore Programs →
+                </a>
+
+            </div>
+
+
+        </div>
+
+
+        <!-- TIP -->
+
+        <div class="tip-box">
+
+            <h2>✨ One useful rule</h2>
+
+            <p>
+                Don't collect skills just to put them on your CV.
+                Learn something, build something with it and
+                actually use it.
+            </p>
+
+            <p>
+                A small project you completed can often tell
+                people more about your ability than a long list
+                of skills.
+            </p>
+
+        </div>
+
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+            © 2026 A-Connect | Built for young people.
+        </p>
+
+    </footer>
+
+
+</body>
+
+</html>
+
